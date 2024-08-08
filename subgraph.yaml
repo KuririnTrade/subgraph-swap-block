@@ -1,0 +1,98 @@
+specVersion: 0.0.5
+description: zkf
+repository: https://github.com/sideswap/subgraph/block
+schema:
+  file: ./schema.graphql
+dataSources:
+  # - kind: ethereum/contract
+  #   name: WUSDC
+  #   network: zkfair
+  #   source:
+  #     address: '0xD33Db7EC50A98164cC865dfaa64666906d79319C'
+  #     abi: WUSDC
+  #     startBlock: 6500000
+  #   mapping:
+  #     kind: ethereum/events
+  #     apiVersion: 0.0.4
+  #     language: wasm/assemblyscript
+  #     file: ./src/mappings/wusdc.ts
+  #     entities:
+  #       - Block
+  #     abis:
+  #       - name: WUSDC
+  #         file: ./abis/WUSDC.json
+  #     eventHandlers:
+  #       - event: Approval(indexed address,indexed address,uint256)
+  #         handler: handleApprove
+  #       - event: Transfer(indexed address,indexed address,uint256)
+  #         handler: handleTransfer
+  #       - event: Deposit(indexed address,uint256)
+  #         handler: handleDeposit
+  #       - event: Withdrawal(indexed address,uint256)
+  #         handler: handleWithdrawal
+  # - kind: ethereum/contract
+  #   name: ZKF
+  #   network: zkfair
+  #   source:
+  #     address: '0x1cD3E2A23C45A690a18Ed93FD1412543f464158F'
+  #     abi: ERC20
+  #     startBlock: 6500000
+  #   mapping:
+  #     kind: ethereum/events
+  #     apiVersion: 0.0.4
+  #     language: wasm/assemblyscript
+  #     file: ./src/mappings/zkf.ts
+  #     entities:
+  #       - Block
+  #     abis:
+  #       - name: ERC20
+  #         file: ./abis/ERC20.json
+  #     eventHandlers:
+  #       - event: Approval(indexed address,indexed address,uint256)
+  #         handler: handleApprove
+  #       - event: Transfer(indexed address,indexed address,uint256)
+  #         handler: handleTransfer
+  - kind: ethereum/contract
+    name: ETH
+    network: mode-testnet
+    source:
+      address: '0xc7b06F55FBCD31cd691504f3DFc4efa9082616B7'
+      abi: ERC20
+      startBlock: 3066266
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappings/eth.ts
+      entities:
+        - Block
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApprove
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+  # - kind: ethereum/contract
+  #   name: SIDE
+  #   network: zkfair
+  #   source:
+  #     address: '0x50BCB6ecF1Fddd35D649fB1Bc6760Dd7AA32B348'
+  #     abi: ERC20
+  #     startBlock: 6500000
+  #   mapping:
+  #     kind: ethereum/events
+  #     apiVersion: 0.0.4
+  #     language: wasm/assemblyscript
+  #     file: ./src/mappings/side.ts
+  #     entities:
+  #       - Block
+  #     abis:
+  #       - name: ERC20
+  #         file: ./abis/ERC20.json
+  #     eventHandlers:
+  #       - event: Approval(indexed address,indexed address,uint256)
+  #         handler: handleApprove
+  #       - event: Transfer(indexed address,indexed address,uint256)
+  #         handler: handleTransfer
