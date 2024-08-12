@@ -6,11 +6,11 @@ schema:
 dataSources:
   # - kind: ethereum/contract
   #   name: WUSDC
-  #   network: zkfair
+  #   network: mode-testnet
   #   source:
-  #     address: '0xD33Db7EC50A98164cC865dfaa64666906d79319C'
+  #     address: '0x6E0E4A4994e68Cc5D28802cba1dC7EE13b1e9659'
   #     abi: WUSDC
-  #     startBlock: 6500000
+  #     startBlock: 16318292
   #   mapping:
   #     kind: ethereum/events
   #     apiVersion: 0.0.4
@@ -32,11 +32,11 @@ dataSources:
   #         handler: handleWithdrawal
   # - kind: ethereum/contract
   #   name: ZKF
-  #   network: zkfair
+  #   network: mode-testnet
   #   source:
-  #     address: '0x1cD3E2A23C45A690a18Ed93FD1412543f464158F'
+  #     address: '0xc14092D39d4B9034b41b2D00581e8b4Cb282611F'
   #     abi: ERC20
-  #     startBlock: 6500000
+  #     startBlock: 14062874
   #   mapping:
   #     kind: ethereum/events
   #     apiVersion: 0.0.4
@@ -74,25 +74,25 @@ dataSources:
           handler: handleApprove
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-  # - kind: ethereum/contract
-  #   name: SIDE
-  #   network: zkfair
-  #   source:
-  #     address: '0x50BCB6ecF1Fddd35D649fB1Bc6760Dd7AA32B348'
-  #     abi: ERC20
-  #     startBlock: 6500000
-  #   mapping:
-  #     kind: ethereum/events
-  #     apiVersion: 0.0.4
-  #     language: wasm/assemblyscript
-  #     file: ./src/mappings/side.ts
-  #     entities:
-  #       - Block
-  #     abis:
-  #       - name: ERC20
-  #         file: ./abis/ERC20.json
-  #     eventHandlers:
-  #       - event: Approval(indexed address,indexed address,uint256)
-  #         handler: handleApprove
-  #       - event: Transfer(indexed address,indexed address,uint256)
-  #         handler: handleTransfer
+  - kind: ethereum/contract
+    name: SIDE
+    network: mode-testnet
+    source:
+      address: '0xdbc50ce0f71621e334ebc73135ed26b184da4984'
+      abi: ERC20
+      startBlock: 3072734
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappings/side.ts
+      entities:
+        - Block
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApprove
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
